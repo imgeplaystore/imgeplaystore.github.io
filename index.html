@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SWYNRZBYD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0SWYNRZBYD');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İmge - Mobil Oyunlar & Yapay Zeka Müzikleri</title>
@@ -172,7 +182,6 @@
       background-color: #b91c1c;
     }
 
-    /* Füzyon Erken Erişim Özel Alanı */
     .early-access-box {
       background: rgba(0, 0, 0, 0.25);
       border: 1px solid #1f2937;
@@ -257,7 +266,11 @@
         <p class="description">
           Gelişmiş yapay zeka rakiplere karşı internet gerektirmeden oynanabilen akıcı, stratejik ihaleli batak deneyimi.
         </p>
-        <a href="https://play.google.com/store/apps/details?id=com.aistudio.applet.jlexyp" target="_blank" rel="noopener noreferrer" class="btn">
+        <a href="https://play.google.com/store/apps/details?id=com.aistudio.applet.jlexyp" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn"
+           onclick="gtag('event', 'click_download', {'game_name': 'Batak_Ihaleli', 'link_type': 'play_store'});">
           Google Play'de İncele
         </a>
       </div>
@@ -278,7 +291,11 @@
             <li>
               İlk olarak Google erken erişim grubumuza katılın:
               <div class="link-box">
-                <a href="https://groups.google.com/g/imge_erken_erisim" target="_blank" rel="noopener noreferrer" class="group-link">
+                <a href="https://groups.google.com/g/imge_erken_erisim" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group-link"
+                   onclick="gtag('event', 'click_join_group', {'game_name': 'Fuzyon', 'group_name': 'imge_erken_erisim'});">
                   imge_erken_erisim@googlegroups.com
                 </a>
               </div>
@@ -286,7 +303,11 @@
             <li>
               Gruba katıldıktan sonra aşağıdaki bağlantıyı açın, <strong>"Test Kullanıcısı Ol"</strong> butonuna basın ve ardından çıkan Play Store bağlantısından oyunu indirin:
               <div class="link-box" style="margin-top: 10px;">
-                <a href="https://play.google.com/store/apps/details?id=com.fuzyonoyunu" target="_blank" rel="noopener noreferrer" class="btn">
+                <a href="https://play.google.com/store/apps/details?id=com.fuzyonoyunu" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn"
+                   onclick="gtag('event', 'click_download', {'game_name': 'Fuzyon', 'link_type': 'early_access_play_store'});">
                   Play Store'dan İndir
                 </a>
               </div>
@@ -312,7 +333,11 @@
         <p class="description">
           Ankara havalarından enerjik hard rock ve hip-hop tınılarına; ofis dinamikleri, satış temposu ve gündelik hayattan ilham alan yapay zeka besteleri.
         </p>
-        <a href="https://music.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-yt">
+        <a href="https://music.youtube.com" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-yt"
+           onclick="gtag('event', 'click_music', {'platform': 'youtube_music'});">
           Çalma Listesini Dinle
         </a>
       </div>
