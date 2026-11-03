@@ -1,228 +1,327 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uygulama Geliştirme ve YZ Müzik İçerikleri</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-            --music-accent: #f43f5e;
-            --music-hover: #e11d48;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2.5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-        header h1 {
-            font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-        .section-title {
-            font-size: 1.25rem;
-            color: var(--accent);
-            margin: 1.5rem 0 1rem 0;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 0.4rem;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-        }
-        .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .card-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-        .card-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        .btn {
-            display: inline-block;
-            align-self: flex-start;
-            background-color: var(--accent);
-            color: #0f172a;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s, transform 0.1s;
-        }
-        .btn:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
-        }
-        .btn-music {
-            background-color: var(--music-accent);
-            color: #ffffff;
-        }
-        .btn-music:hover {
-            background-color: var(--music-hover);
-        }
-        .badge {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .badge-live {
-            background: rgba(56, 189, 248, 0.15);
-            color: #38bdf8;
-        }
-        .badge-dev {
-            background: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
-        }
-        .badge-music {
-            background: rgba(244, 63, 94, 0.15);
-            color: #f43f5e;
-        }
-        footer {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid #334155;
-            padding-top: 1.5rem;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İmge - Mobil Oyunlar & Yapay Zeka Müzikleri</title>
+  <meta name="description" content="İmge Games & Music vitrini: Batak İhaleli YZ, Füzyon fizik bulmaca oyunu ve yapay zeka müzik besteleri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #374151;
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-header h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge.live {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge.early-access {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge.music {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--accent-red);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .description {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-yt {
+      background-color: #dc2626;
+    }
+
+    .btn-yt:hover {
+      background-color: #b91c1c;
+    }
+
+    /* Füzyon Erken Erişim Özel Alanı */
+    .early-access-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid #1f2937;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .early-access-box p.intro {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .step-list {
+      padding-left: 20px;
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .step-list li {
+      margin-bottom: 16px;
+    }
+
+    .link-box {
+      margin-top: 6px;
+    }
+
+    .group-link {
+      color: #38bdf8;
+      text-decoration: underline;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .info-note {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--accent-amber);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #fef3c7;
+      margin-top: 16px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Uygulama Geliştirme ve YZ Müzik İçerikleri</h1>
-            <p>Mobil oyun projeleri, yapay zeka entegrasyonları ve özgün müzik besteleri</p>
-        </header>
 
-        <!-- Mobil Uygulamalar Bölümü -->
-        <h2 class="section-title">Mobil Oyunlar</h2>
-        <div class="card-grid">
-            <!-- Batak İhaleli -->
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Batak İhaleli YZ</span>
-                    <span class="badge badge-live">Yayında</span>
-                </div>
-                <p class="card-desc">
-                    Akıllı yapay zeka rakiplere karşı klasik ihaleli batak deneyimi. Akıcı kart animasyonları, gelişmiş puanlama ve sezgisel kullanıcı arayüzü.
-                </p>
-                <a href="https://play.google.com/store/apps/details?id=com.aistudio.applet.jlexyp" target="_blank" class="btn">
-                    Google Play'den İndir
+  <div class="container">
+    <header>
+      <h1>İMGE</h1>
+      <p>Yapay Zeka Destekli Mobil Oyunlar & Müzik Projeleri</p>
+    </header>
+
+    <!-- Oyunlar Bölümü -->
+    <h2 class="section-title">🎮 Mobil Oyunlar</h2>
+    <div class="grid">
+      
+      <!-- Batak İhaleli YZ -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Batak İhaleli YZ</h3>
+          <span class="badge live">Canlıda</span>
+        </div>
+        <p class="description">
+          Gelişmiş yapay zeka rakiplere karşı internet gerektirmeden oynanabilen akıcı, stratejik ihaleli batak deneyimi.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.aistudio.applet.jlexyp" target="_blank" rel="noopener noreferrer" class="btn">
+          Google Play'de İncele
+        </a>
+      </div>
+
+      <!-- Füzyon Oyunu (Erken Erişim) -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Füzyon</h3>
+          <span class="badge early-access">Erken Erişim</span>
+        </div>
+        <p class="description">
+          Atomları birleştir, reaksiyonu başlat! Proton ve Anti Madde güçlendiricileri içeren fizik tabanlı füzyon bulmaca oyunu.
+        </p>
+
+        <div class="early-access-box">
+          <p class="intro">Füzyon oyununu erken erişim ile ilk siz oynayın:</p>
+          <ol class="step-list">
+            <li>
+              İlk olarak Google erken erişim grubumuza katılın:
+              <div class="link-box">
+                <a href="https://groups.google.com/g/imge_erken_erisim" target="_blank" rel="noopener noreferrer" class="group-link">
+                  imge_erken_erisim@googlegroups.com
                 </a>
-            </div>
-
-           <!-- Füzyon Oyunu Kartı (Erken Erişim) -->
-<div class="game-card">
-  <div class="card-header">
-    <h3>Füzyon</h3>
-    <span class="badge early-access">Erken Erişim</span>
-  </div>
-  
-  <p class="description">
-    Atomları birleştir, reaksiyonu başlat! Fizik tabanlı füzyon bulmaca oyunu.
-  </p>
-
-  <div class="early-access-instructions">
-    <p><strong>Füzyon oyununu erken erişim ile ilk siz oynayın:</strong></p>
-    
-    <ol>
-      <li>
-        İlk olarak Google erken erişim grubumuza katılın:
-        <div class="group-box">
-          <a href="https://groups.google.com/g/imge_erken_erisim" target="_blank" rel="noopener noreferrer" class="group-link">
-            imge_erken_erisim@googlegroups.com
-          </a>
-        </div>
-      </li>
-      <li>
-        Gruba katıldıktan sonra aşağıdaki bağlantıyı açın, <strong>"Test Kullanıcısı Ol"</strong> butonuna basın ve ardından çıkan Play Store bağlantısından oyunu indirin:
-        <div class="action-buttons">
-          <a href="https://play.google.com/store/apps/details?id=com.fuzyonoyunu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Play Store'dan İndir
-          </a>
-        </div>
-      </li>
-    </ol>
-
-    <div class="note-box">
-      ℹ️ Oyunu 14 gün boyunca cihazınızda yüklü tutmanız ve ara sıra açıp birkaç kez oynamanız test sürecinin tamamlanması için önemlidir. Desteğiniz için teşekkürler!
-    </div>
-  </div>
-</div>
-
-        <!-- YZ Müzikleri Bölümü -->
-        <h2 class="section-title">İmge YZ Müzikleri</h2>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">İmge YZ Müzikleri Çalma Listesi</span>
-                    <span class="badge badge-music">YouTube Music</span>
-                </div>
-                <p class="card-desc">
-                    Yapay zeka altyapısıyla bestelenmiş, farklı müzik türlerini ve tematik söz yapılarını harmanlayan özgün parça koleksiyonu.
-                </p>
-                <a href="https://music.youtube.com/playlist?list=PLRm_dTspqKYQ" target="_blank" class="btn btn-music">
-                    Çalma Listesini Dinle
+              </div>
+            </li>
+            <li>
+              Gruba katıldıktan sonra aşağıdaki bağlantıyı açın, <strong>"Test Kullanıcısı Ol"</strong> butonuna basın ve ardından çıkan Play Store bağlantısından oyunu indirin:
+              <div class="link-box" style="margin-top: 10px;">
+                <a href="https://play.google.com/store/apps/details?id=com.fuzyonoyunu" target="_blank" rel="noopener noreferrer" class="btn">
+                  Play Store'dan İndir
                 </a>
-            </div>
-        </div>
+              </div>
+            </li>
+          </ol>
 
-        <footer>
-            <p>İletişim: <a href="mailto:imgeplaystore@gmail.com">imgeplaystore@gmail.com</a></p>
-            <p style="margin-top: 0.4rem;">&copy; 2026 İmge. Tüm hakları saklıdır.</p>
-        </footer>
+          <div class="info-note">
+            ℹ️ Oyunu 14 gün boyunca cihazınızda yüklü tutmanız ve ara sıra açıp birkaç kez oynamanız test sürecinin tamamlanması için önemlidir. Desteğiniz için teşekkürler!
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Müzik Vitrini Bölümü -->
+    <h2 class="section-title">🎵 Yapay Zeka Müzikleri</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          <h3>İmge YZ Müzikleri</h3>
+          <span class="badge music">YouTube Music</span>
+        </div>
+        <p class="description">
+          Ankara havalarından enerjik hard rock ve hip-hop tınılarına; ofis dinamikleri, satış temposu ve gündelik hayattan ilham alan yapay zeka besteleri.
+        </p>
+        <a href="https://music.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-yt">
+          Çalma Listesini Dinle
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 İmge. Tüm hakları saklıdır. | <a href="/app-ads.txt">app-ads.txt</a></p>
+    </footer>
+  </div>
+
 </body>
 </html>
